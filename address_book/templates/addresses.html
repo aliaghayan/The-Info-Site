@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Confirmed Info</h1>
+  {%if addresses %}
+      {% for records in addresses %}
+          {{ records.name }}<br/>
+          {{ records.phone }}<br/>
+          {{ records.company }}<br/>
+          {{ records.email }}<br/>
+          {{ records.address }}<br/>
+          {{ records.city }}<br/>
+          {{ records.state }}<br/>
+          {{ records.zip }}<br/>
+          <hr/>
+      {% endfor %}
+  {% endif %}
+{% endblock %}
