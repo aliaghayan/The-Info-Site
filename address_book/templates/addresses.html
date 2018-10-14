@@ -2,17 +2,33 @@
 
 {% block content %}
 <h1>Confirmed Info</h1>
-  {%if addresses %}
-      {% for records in addresses %}
-          {{ records.name }}<br/>
-          {{ records.phone }}<br/>
-          {{ records.company }}<br/>
-          {{ records.email }}<br/>
-          {{ records.address }}<br/>
-          {{ records.city }}<br/>
-          {{ records.state }}<br/>
-          {{ records.zip }}<br/>
-          <hr/>
-      {% endfor %}
-  {% endif %}
+<div class='container'>
+  <div class='row'>
+    {% if addresses %}
+        {% for records in addresses %}
+        <div class='col-sm'>
+          <div class="card" style="width: 21rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ records.company }}</h5>
+              <p class="card-text">
+                  Name : {{ records.name }}<br/>
+                  Email : {{ records.email }}<br/>
+                  Phone : {{ records.phone }}<br/>
+                  Company name :{{ records.company }}<br/>
+                  Address : {{ records.address }}<br/>
+                  City : {{ records.city }}<br/>
+                  State : {{ records.state }}<br/>
+                  Zip : {{ records.zipcode }}<br/>
+              </p>
+              <a href="{% url 'edit' records.id %}" class="btn btn-secondary">Edit</a>
+            </div>
+          </div>
+          <br/>
+        </div>
+
+
+        {% endfor %}
+    {% endif %}
+  </div>
+</div>
 {% endblock %}

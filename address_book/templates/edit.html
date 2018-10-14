@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Edit Information</h2>
+<br/>
+{% if get_address %}
+<form method='POST'>
+    {% csrf_token %}
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.name }}" name = 'name' >
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.email }}" name = 'email'>
+  </div>
+  <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.phone }}" name = 'phone'>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.company }}" name = 'company'>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.address }}" name = 'address'>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.city }}" name = 'city'>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.state }}" name = 'state'>
+  </div>
+  <div class="form-group">
+    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ get_address.zipcode }}" name = 'zipcode'>
+  </div>
+  <div class="form-group">
+    <input type="hidden" value="{{ get_address.id }}" name ="id">
+  </div>
+<br/>
+  <button type="submit" class="btn btn-secondary">Edit Info</button>
+</form>
+{% endif %}
+{% endblock %}

@@ -1,5 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>This website is designed for keeping your Addresses and share it</h1><br/>
-<h1>to EVERY ONE!<h1>
+
+  <main role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+          <div class="container">
+            <h1 class="display-3">Hello!</h1>
+            <p>This website is designed for taking your Information and share it to EVERY ONE!</p>
+            <p>AND if you liked my CV please enter your information so i can make contact with you</p>
+            <p>OR you can contact me from Addresses page , Hope to see you soon</p>
+            <p>Ali Aghayan</p>
+          </div>
+        </div>
+
+        <div class="container">
+          <!-- Example row of columns -->
+          <div class="row">
+            <div class="col-md-4">
+              <h2>Adding Information</h2>
+              <p>To add your information click the Button "Add Info" or from Navbar click "Add Info"</p>
+              <p><a class="btn btn-secondary" href="{% url 'address' %}" role="button">Add Info &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+              <h2>See Informations</h2>
+              <p>To see anyone elses information click the Button "Addresses" or from Navbar click "Addresses"</p>
+              <p><a class="btn btn-secondary" href="{% url 'addresses' %}" role="button">Addresses &raquo;</a></p>
+            </div>
+          </div>
+
+
+
+        </div> <!-- /container -->
+
+      </main>
+
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+      <script src="../../assets/js/vendor/popper.min.js"></script>
+      <script src="../../dist/js/bootstrap.min.js"></script>
+
+
 {% endblock %}
